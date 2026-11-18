@@ -1,0 +1,33 @@
+{
+     "version": 4,
+     "configurePresets": [
+          {
+               "name": "base",
+               "hidden": true,
+               "generator": "Ninja Multi-Config",
+               "binaryDir": "${sourceDir}/out/build/${presetName}",
+               "installDir": "${sourceDir}/out/install/${presetName}"
+          },
+          {
+               "name": "clang",
+               "inherits": [
+                    "base"
+               ],
+               "cacheVariables": {
+                    "CMAKE_CXX_COMPILER": "clang++"
+               }
+          }
+     ],
+     "buildPresets": [
+          {
+               "name": "clang-debug",
+               "configurePreset": "clang",
+               "configuration": "Debug"
+          },
+          {
+               "name": "clang-release",
+               "configurePreset": "clang",
+               "configuration": "Release"
+          }
+     ]
+}
