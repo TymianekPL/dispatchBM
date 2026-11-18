@@ -1,3 +1,6 @@
 import std;
 
-int main() { std::println("meow"); }
+int main()
+{
+     std::println("meow");
+}
